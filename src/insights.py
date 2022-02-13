@@ -124,7 +124,16 @@ def get_min_salary(path):
     int
         The minimum salary paid out of all job opportunities
     """
-    pass
+    # O método isdigit , embutido no tipo str , pode ser utilizado para
+    #  verificar se a string corresponde a um número natural.
+    # Uso do min: https://www.w3schools.com/python/ref_func_min.asp
+    job_list = read(path)
+    salary_list = []
+    for salary in job_list:
+        if salary["min_salary"].isdigit():
+            salary_list.append(int(salary["min_salary"]))
+    min_salary = min(salary_list)
+    return min_salary
 
 
 def matches_salary_range(job, salary):

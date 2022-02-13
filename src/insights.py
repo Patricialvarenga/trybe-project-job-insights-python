@@ -97,7 +97,16 @@ def get_max_salary(path):
     int
         The maximum salary paid out of all job opportunities
     """
-    pass
+    # O método isdigit , embutido no tipo str , pode ser utilizado para
+    #  verificar se a string corresponde a um número natural.
+    # Uso do max: https://www.w3schools.com/python/ref_func_max.asp
+    job_list = read(path)
+    salary_list = []
+    for salary in job_list:
+        if salary["max_salary"].isdigit():
+            salary_list.append(int(salary["max_salary"]))
+    max_salary = max(salary_list)
+    return max_salary
 
 
 def get_min_salary(path):

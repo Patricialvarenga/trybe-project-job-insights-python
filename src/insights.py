@@ -194,5 +194,12 @@ def filter_by_salary_range(jobs, salary):
     list
         Jobs whose salary range contains `salary`
     """
-
-    return []
+    # Uso do pass: https://www.w3schools.com/python/ref_keyword_pass.asp
+    job_list_by_salary_range = []
+    for job in jobs:
+        try:
+            if matches_salary_range(job, salary):
+                job_list_by_salary_range.append(job)
+        except ValueError:
+            pass
+    return job_list_by_salary_range
